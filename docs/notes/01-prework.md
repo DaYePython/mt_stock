@@ -42,3 +42,40 @@ yarn add sass-loader node-scass --dev
 
 For example, `warning " > element-ui@2.13.0" has unmet peer dependency "vue@^2.5.17"`.
 `yarn add vue@^2.5.17`
+
+
+## Add commitizen
+
+install dependencies
+```shell
+yarn add -D commitizen conventional-changelog cz-conventional-changelog
+```
+
+config in `package.json`
+```
+{
+    "config": {
+        "commitizen": {
+          "path": "./node_modules/cz-conventional-changelog"
+        }
+    }
+}
+```
+
+in shell
+```
+git add -A
+git-cz
+```
+
+## generate changlog
+
+```
+"genlog": "conventional-changelog -p angular -i .github/CHANGELOG.md -s"
+```
+
+And
+
+```
+yarn genlog
+```
